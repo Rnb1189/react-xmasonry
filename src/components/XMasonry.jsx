@@ -40,6 +40,7 @@ export default class XMasonry extends React.Component {
     // };
 
     static defaultProps = {
+        rtl:true,
         center: true,
         maxColumns: isServer ? DEFAULT_SERVER_COLUMNS : Infinity,
         responsive: true,
@@ -379,7 +380,7 @@ export default class XMasonry extends React.Component {
                     "data-key": key,
                     "key": key,
                     "style": {
-                        left: Math.floor(measured.left),
+                        [this.props.rtl ? 'right' :'left']: Math.floor(measured.left),
                         top: measured.top
                     },
                     "measured": true,
